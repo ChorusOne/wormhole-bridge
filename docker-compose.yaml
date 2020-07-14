@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  gaia:
+    image: gaia
+    build:
+      context: ./gaia
+    command: gaiad start
+  lcd:
+    image: gaia
+    command: gaiacli rest-server
+  qt:
+    image: quantum-tunnel
+    build:
+      context: ./quantum-tunnel
+  wormhole:
+    image: wormhole
+    build:
+      context: ./wormhole
+    command: wormhole start --dev
+   
