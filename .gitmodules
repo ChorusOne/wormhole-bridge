@@ -1,9 +1,9 @@
 [submodule "quantum-tunnel"]
 	path = quantum-tunnel
-	url = https://github.com/ChorusOne/quantum-tunnel.git
+	url = git@github.com:ChorusOne/quantum-tunnel.git
 [submodule "wormhole"]
 	path = wormhole
-	url = https://github.com/ChorusOne/wormhole.git
+	url = git@github.com:ChorusOne/wormhole.git
 [submodule "gaia"]
 	path = gaia
-	url = https://github.com/ChorusOne/gaia.git
+	url = git@github.com:ChorusOne/gaia.git
