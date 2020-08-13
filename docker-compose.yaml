@@ -7,15 +7,17 @@ services:
       args:
         - GROUP_ID=1000
         - USER_ID=1000
-    command: gaiad start --rpc.laddr tcp://0.0.0.0:26657
+    command: gaiad start --home "/home/gaia/.gaiad"  --rpc.laddr tcp://0.0.0.0:26657
     volumes:
       - ./data:/home/gaia/
     ports:
       - 26657:26657
   lcd:
     image: gaia
-    command: gaiacli rest-server --laddr tcp://0.0.0.0:1317 --node http://gaia:26657 --chain-id wormhole --trust-node
+    command: gaiacli rest-server --laddr tcp://0.0.0.0:1317 --node http://gaia:26657 --home "/home/gaia/.gaiacli"  --chain-id wormhole --trust-node
     restart: always
+    volumes:
+      - ./data:/home/gaia
     ports:
       - 1317:1317
   qt:
@@ -27,7 +29,7 @@ services:
     volumes:
       - ./data:/data
     environment:
-      - COSMOS_SIGNER_SEED=crush carbon concert spirit energy stumble pioneer rescue region benefit coral dragon delay edit emotion judge image other reunion decade area easily ability snake
+      - COSMOS_SIGNER_SEED=sunny source soul allow brave luggage mandate metal worth state vapor couple butter retreat solid drift cargo alley degree junk bean price element easy
       - SUBSTRATE_SIGNER_SEED=flat reflect table identify forward west boat furnace similar million list wood
   wormhole:
     image: wormhole
