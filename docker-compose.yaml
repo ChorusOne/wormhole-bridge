@@ -14,8 +14,7 @@ services:
       - 26657:26657
   lcd:
     image: gaia
-    command: gaiacli rest-server --laddr tcp://0.0.0.0:1317 --node http://gaia:26657 --home "/home/gaia/.gaiacli"  --chain-id wormhole --trust-node
-    restart: always
+    command: sh -c "sleep 10; gaiacli tx ibc wasm store "/wasm/substrate_client.wasm"  --gas=2000000 --home "/home/gaia/.gaiacli" --node http://gaia:26657 --chain-id wormhole --from=relayer --keyring-backend test --yes; gaiacli rest-server --laddr tcp://0.0.0.0:1317 --node http://gaia:26657 --home "/home/gaia/.gaiacli"  --chain-id wormhole --trust-node"
     volumes:
       - ./data:/home/gaia
     ports:
@@ -24,7 +23,7 @@ services:
     image: quantum-tunnel
     build:
       context: ./quantum-tunnel
-    command: sh -c "sleep 10; quantum-tunnel -c /data/config.json start"
+    command: sh -c "sleep 20; quantum-tunnel -c /data/config.json start"
     restart: always
     volumes:
       - ./data:/data
