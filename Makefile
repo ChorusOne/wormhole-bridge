@@ -16,6 +16,7 @@ build:
 all: build clean config run
 
 clean:
+	docker-compose down
 	rm -rf data
 
 run:
