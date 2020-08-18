@@ -2,7 +2,9 @@
 
 ## What is Wormhole?
 
-Wormhole is a bridge to connect a Substrate-based blockchain to a Cosmos-SDK based blockchain. It is based around a 
+Wormhole is a bridge to connect a Substrate-based blockchain to a Cosmos-SDK based blockchain. Specifically it connects
+substrate light client running inside cosmos chain to substrate chain and cosmos light client running inside substrate chain to cosmos chain.
+ 
 
 ## Parts
 
