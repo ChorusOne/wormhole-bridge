@@ -1,0 +1,17 @@
+{
+  "cosmos": {
+    "simulation": {
+      "simulation_file_path": "/data/simulated_cosmos_light_client.txt",
+      "should_run_till_height": 210
+    }
+  },
+  "substrate": {
+    "real": {
+      "ws_addr": "ws://wormhole:9944/",
+      "rpc_addr": "http://wormhole:9933/",
+      "trusting_period": "99998h",
+      "unbonding_period": "99999h",
+      "max_clock_drift": "30s"
+    }
+  }
+}
