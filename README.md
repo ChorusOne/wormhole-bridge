@@ -17,7 +17,7 @@ The Wormhole bridge, comprises three parts:
 In order to run the demo, clone this repository, and run `docker-compose up`.
 
 ## Integration tests
-There are four integration test variants you can run:
+There are five integration test variants you can run:
 1. **Live**: Both chains are live
 2. **Simulated cosmos**: Cosmos chain is simulated with a text file and headers are fed into cosmos light client running in substrate chain
 3. **Simulated substrate**: Substrate chain is simulated with a text file and headers are fed into substrate light client running in cosmos chain
