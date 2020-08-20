@@ -5,7 +5,9 @@ config:
 	mkdir -p data/.gaiacli
 	docker-compose run gaia gaiad init --home "/home/gaia/.gaiad" --chain-id=wormhole node || true
 	cp configs/keyring-test data/.gaiacli/keyring-test -R
-	cp configs/qt.json data/config.json
+	cp configs/live_config.json data/live_config.json
+	cp configs/faulty* data/
+	cp configs/simulated* data/
 	cp configs/genesis.json data/.gaiad/config/
 	cp configs/priv_validator_key.json data/.gaiad/config/
 	cp configs/config.toml data/.gaiad/config/
@@ -21,3 +23,19 @@ clean:
 
 run:
 	docker-compose up
+
+test_live:
+	docker-compose up --exit-code-from qt
+
+test_simulated_substrate:
+	TEST_MODE=simulated_substrate docker-compose up --exit-code-from qt
+
+test_simulated_cosmos:
+	TEST_MODE=simulated_cosmos docker-compose up --exit-code-from qt
+
+test_faulty_simulated_substrate:
+	TEST_MODE=faulty_simulated_substrate docker-compose up --exit-code-from qt
+
+test_faulty_simulated_cosmos:
+	TEST_MODE=faulty_simulated_cosmos docker-compose up --exit-code-from qt
+
