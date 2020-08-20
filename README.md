@@ -25,6 +25,7 @@ make run
 ```
 
 ## Integration tests
+Before running integration test, docker images are needed to be built with `make build`.
 There are five integration test variants you can run:
 
 ### Live
