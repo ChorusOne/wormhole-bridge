@@ -14,6 +14,10 @@ The Wormhole bridge, comprises three parts:
 ## Demo
 In order to run the demo, clone this repository, and run following command:
 ```
+# Fetches submodules
+git submodule init 
+git submodule update
+
 # Cleans data directory and shuts down any stray docker containers.
 make clean
 
