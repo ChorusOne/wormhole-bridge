@@ -1,4 +1,4 @@
-.PHONY : all config build run clean
+.PHONY : all config build run clean test_live test_simulated_substrate test_simulated_cosmos test_faulty_simulated_substrate test_faulty_simulated_cosmos
 .DEFAULT_GOAL := all
 
 config:
@@ -15,7 +15,7 @@ config:
 build:
 	docker-compose build
 
-all: build clean config run
+all: | build clean config run
 
 clean:
 	docker-compose down
@@ -24,18 +24,18 @@ clean:
 run:
 	docker-compose up
 
-test_live:
+test_live: | clean config
 	docker-compose up --exit-code-from qt
 
-test_simulated_substrate:
+test_simulated_substrate: | clean config
 	TEST_MODE=simulated_substrate docker-compose up --exit-code-from qt
 
-test_simulated_cosmos:
+test_simulated_cosmos: | clean config
 	TEST_MODE=simulated_cosmos docker-compose up --exit-code-from qt
 
-test_faulty_simulated_substrate:
+test_faulty_simulated_substrate: | clean config
 	TEST_MODE=faulty_simulated_substrate docker-compose up --exit-code-from qt
 
-test_faulty_simulated_cosmos:
+test_faulty_simulated_cosmos: | clean config
 	TEST_MODE=faulty_simulated_cosmos docker-compose up --exit-code-from qt
 
