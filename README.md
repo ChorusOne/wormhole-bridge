@@ -7,9 +7,11 @@ substrate light client running inside cosmos chain to substrate chain and cosmos
 
 ## Architecture
 The Wormhole bridge, comprises three parts:
-  - A fork of Gaia, with an additional module to allow execution of wasm-based light clients.
-  - Wormhole, a Substrate-based chain, including a tendermint-client pallet.
-  - Quantum-tunnel, a simple relayer, written in rust.
+  - [A fork of Gaia](https://github.com/ChorusOne/gaia/tree/657a306b98cf646c3bf434f8e1ad2d0b94ab8e9f), with an additional module to allow execution of wasm-based light clients.
+  - [Wormhole](https://github.com/ChorusOne/wormhole/tree/274f9bcc07aaad045b3a4386c8831e1cda7f661d), a Substrate-based chain, including a tendermint-client pallet.
+  - [Quantum-tunnel](https://github.com/ChorusOne/quantum-tunnel), a simple relayer, written in rust.
+  - [Tendermint light client](https://github.com/ChorusOne/tendermint_light_client), light client for tendermint based chain, written in rust.
+  - [Substrate light client](https://github.com/ChorusOne/substrate-ibc-client), light client for substrate based chain, written in rust referenced by Wormhole.
 
 ![Architecture](architecture.png)
 
