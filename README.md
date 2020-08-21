@@ -7,8 +7,8 @@ substrate light client running inside cosmos chain to substrate chain and cosmos
 
 ## Architecture
 The Wormhole bridge, comprises three parts:
-  - [A fork of Gaia](https://github.com/ChorusOne/gaia/tree/657a306b98cf646c3bf434f8e1ad2d0b94ab8e9f), with an additional module to allow execution of wasm-based light clients.
-  - [Wormhole](https://github.com/ChorusOne/wormhole/tree/274f9bcc07aaad045b3a4386c8831e1cda7f661d), a Substrate-based chain, including a tendermint-client pallet.
+  - [A fork of Gaia](https://github.com/ChorusOne/gaia), with an additional module to allow execution of wasm-based light clients.
+  - [Wormhole](https://github.com/ChorusOne/wormhole), a Substrate-based chain, including a tendermint-client pallet.
   - [Quantum-tunnel](https://github.com/ChorusOne/quantum-tunnel), a simple relayer, written in rust.
   - [Tendermint light client](https://github.com/ChorusOne/tendermint_light_client), light client for tendermint based chain, written in rust, referenced by tendermint-client pallet in Wormhole.
   - [Substrate light client](https://github.com/ChorusOne/substrate-ibc-client), light client for substrate based chain, written in rust as CosmWasm contract. Its wasm bytecode need to be uploaded to Gaia fork as part of bridge setup.
@@ -54,10 +54,10 @@ Same as simulated substrate but with faulty data to test failure scenario. To ru
 
 
 ## Credit and Attribution
-Substrate - Web3 Foundation, Parity
-Cosmos-SDK - All in Bits, Tendermint Inc., Interchain.io, Interchain Foundation
-Cosmwasm - Confio, Ethan Frey and Simon Warta
-Tendermint-rs - Informal Systems
-Concept of Wasm-based light client - Zaki Manian, Iqclusion
+- Substrate - Web3 Foundation, Parity
+- Cosmos-SDK - All in Bits, Tendermint Inc., Interchain.io, Interchain Foundation
+- Cosmwasm - Confio, Ethan Frey and Simon Warta
+- Tendermint-rs - Informal Systems
+- Concept of Wasm-based light client - Zaki Manian, Iqclusion
 
 
