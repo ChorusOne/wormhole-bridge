@@ -5,11 +5,13 @@ Wormhole is a bridge to connect a Substrate-based blockchain to a Cosmos-SDK bas
 substrate light client running inside cosmos chain to substrate chain and cosmos light client running inside substrate chain to cosmos chain.
  
 
-## Parts
+## Architecture
 The Wormhole bridge, comprises three parts:
   - A fork of Gaia, with an additional module to allow execution of wasm-based light clients.
   - Wormhole, a Substrate-based chain, including a tendermint-client pallet.
   - Quantum-tunnel, a simple relayer, written in rust.
+
+![Architecture](architecture.png)
 
 ## Demo
 In order to run the demo, clone this repository, and run following command:
