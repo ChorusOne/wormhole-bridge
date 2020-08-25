@@ -28,6 +28,9 @@ make clean
 # Builds docker images, could take a while.
 make build
 
+# Configure data directory
+make config
+
 # Runs a demo
 make run
 ```
